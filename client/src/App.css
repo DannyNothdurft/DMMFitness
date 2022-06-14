@@ -120,7 +120,12 @@ h1 {
 
 .btn-main-offer:hover {
   color: black;
-  text-transform: lowercase;
+  transform: scale(1.1);
+}
+
+.btn-main-offer:active {
+  box-shadow: inset 2px 2px 2px 2px black,
+    inset -2px -2px 2px 2px rgba(0, 0, 20, 0.5);
 }
 
 /* .tsparticles-canvas-el {
