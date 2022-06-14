@@ -1,6 +1,6 @@
 # DMMFitness
 
-## Team Mitglieder
+### Team Mitglieder
 - Magdelena Gavrilova
 - Marija Gavrilova
 - Danny Nothdurft
