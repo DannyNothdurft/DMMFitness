@@ -10,13 +10,7 @@ import Header from './components/Header';
 import { ChakraProvider, theme } from '@chakra-ui/react'
 // Pages
 import Shop from './pages/Shop';
-import Map from './pages/Map'
-
-
-
-
-// Pages
-import Shop from './pages/Shop';
+import Map from './pages/Map';
 import About from './pages/About'
 
 function App() {
