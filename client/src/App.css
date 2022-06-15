@@ -59,7 +59,7 @@ body {
 } 
 .logIn {
   background-color: transparent;
-  color : orange;
+  color : white;
   border-radius: 6px;
   padding-left: 170px;
   padding-top: 5px;
@@ -69,7 +69,8 @@ body {
   font-size: 1.3rem;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
-  
+  border-color: orange;
+ 
    
 }
 .logIn>*{
@@ -81,8 +82,8 @@ body {
 }
 
 .logIn:hover{
-   color: white; 
-  border:none;
+  
+  background-color:rgb(65, 63, 61);
   /* box-shadow: inset 10px 80px 30px 40px rgb(90, 88, 88); */
 }
 
@@ -141,7 +142,7 @@ h1 {
 }
 
 .btn-main-offer:hover {
-  background-color: black;
+  background-color: rgb(65, 63, 61);;
   
   color:orange;
  /*  transform: scale(1.1); */
@@ -160,3 +161,7 @@ h1 {
   width: 100vw;
   z-index: 1;
 } */
+
+.typed-text::first-letter {
+  color: orange;
+}

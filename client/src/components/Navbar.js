@@ -23,8 +23,9 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container d-flex flex-row-reverse">
 
+
         <button className="logIn" onClick={openRegisterCard} >
-          <FontAwesomeIcon icon={faCircleUser} style={{ color: 'orange', fontSize: '2rem' }} />
+          <FontAwesomeIcon icon={faCircleUser} style={{ color: 'white', fontSize: '2rem' }} />
           Log In
         </button>
 
