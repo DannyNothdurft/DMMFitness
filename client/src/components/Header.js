@@ -1,6 +1,7 @@
 import React from 'react'
 import Typed from "react-typed"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
    
@@ -20,7 +21,10 @@ export default function Header() {
             <button
                 className="btn-main-offer"
             >Start Today</button>
-
+ <button className="chatIcon" style={{backgroundColor: 'transparent', border:'none'}} >
+          <FontAwesomeIcon icon={faCommentDots} style={{color:'white',fontSize:'3.5rem'}} />
+     <p className="chatText" style= {{color:'white'}}> Chat With Us</p>
+        </button>
            
         </div>
     )

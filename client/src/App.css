@@ -87,6 +87,21 @@ body {
   /* box-shadow: inset 10px 80px 30px 40px rgb(90, 88, 88); */
 }
 
+.chatIcon {
+ position: absolute;
+ right:80px;
+ bottom:50px;
+
+}
+
+.chatText {
+  font-size: 1.5rem;
+  font-family: "Roboto Condensed", sans-serif;
+} 
+
+
+
+
 .header-wraper {
   height: 100vh;
   width: 100%;
