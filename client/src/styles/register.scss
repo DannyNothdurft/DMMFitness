@@ -1,3 +1,4 @@
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -7,13 +8,18 @@
     left: 0;
 
     .close-button {
-        background-color: rgb(255, 253, 253);
+        background-color: transparent;
         border: none;
         font-size: 3rem;
         position: absolute;
         right: 10px;
         top: 5px;
     }
+   input::placeholder {
+       color: white;
+       font-weight:bold;
+   }
+   
 
     .logo {
         width: 300px;
@@ -48,11 +54,15 @@
                 width: 480px;
                 font-size: 1rem;
 
-                &:focus {
-                    border: 0.1rem solid #997af0;
+                &:focus  {
+                    border: 0.1rem solid white;
                     outline: none;
+                   
                 }
             }
+            input:focus::placeholder {
+                color: transparent;
+              }
 
             .submit-button {
                 background-color: #f0ab00;

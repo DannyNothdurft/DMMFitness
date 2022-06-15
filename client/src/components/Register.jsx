@@ -96,7 +96,7 @@ function Register({ register, setRegister }) {
     return (
 
         <div className='overlay'>
-            <div className='register-card'>
+            <div className='register-card' style={{backgroundColor:'grey'}}>
                 <button onClick={closeRegisterCard} className='close-button'>
                     <FontAwesomeIcon icon={faXmark} />
                 </button>
@@ -105,19 +105,19 @@ function Register({ register, setRegister }) {
                 <form onSubmit={(event) => handleSubmit(event)}>
                     <input
                         type="text"
-                        placeholder='firstname'
+                        placeholder='Firstname'
                         name='firstname'
                         onChange={(e) => handleChange(e)}
                     />
                     <input
                         type="text"
-                        placeholder='lastname'
+                        placeholder='Lastname'
                         name='lastname'
                         onChange={(e) => handleChange(e)}
                     />
                     <input
                         type="tel"
-                        placeholder='phone'
+                        placeholder='Mobile Number'
                         name='phone'
                         onChange={(e) => handleChange(e)}
                     />
