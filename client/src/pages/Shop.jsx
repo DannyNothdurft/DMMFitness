@@ -10,10 +10,10 @@ function Shop() {
     js.type = "text/javascript";
     js.src = "https://dmm-fitness.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js";
     document.body.appendChild(js);
-
+    
     return (
         < div id="myShop" >
-            <a href="https://dmm-fitness.myspreadshop.de">dmm-fitness</a>
+            <a href="https://dmm-fitness.myspreadshop.de">DMM.Fitness SHOP</a>
         </div >
     )
 }
