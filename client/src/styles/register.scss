@@ -1,9 +1,85 @@
-.register-card {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 20px;
+.overlay {
     background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+    top: 0;
+    left: 0;
+
+    .close-button {
+        background-color: white;
+        border: none;
+        font-size: 3rem;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+
+    .logo {
+        width: 300px;
+        position: absolute;
+        left: calc(50% - 150px);
+        top: 20px;
+    }
+
+    .register-card {
+        height: 90%;
+        width: 600px;
+        position: absolute;
+        right: calc(50% - 300px);
+        top: calc(50% - 45vH);
+        background-color: white;
+        border-radius: 8px;
+        border: 2px solid black;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 120px;
+            align-items: center;
+
+            input {
+                background-color: transparent;
+                margin: 20px;
+                padding: 1rem;
+                border: 0.1rem solid #f0ab00;
+                border-radius: 0.4rem;
+                color: black;
+                width: 480px;
+                font-size: 1rem;
+
+                &:focus {
+                    border: 0.1rem solid #997af0;
+                    outline: none;
+                }
+            }
+
+            .submit-button {
+                background-color: #f0ab00;
+                color: white;
+                padding: 1rem 2rem;
+                border: none;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 0.4rem;
+                font-size: 1rem;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: #4e0eff;
+                }
+            }
+
+            span {
+                color: black;
+                text-transform: uppercase;
+
+                a {
+                    color: #4e0eff;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
