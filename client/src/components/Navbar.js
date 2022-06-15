@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../images/logo.png"
 
@@ -15,31 +15,22 @@ export default function Navbar() {
   const [register, setRegister] = useState(false)
 
   const openRegisterCard = () => {
-      setRegister(!register);
+    setRegister(!register);
   }
-
-
-
-
-
 
   return (
 
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container d-flex flex-row-reverse">
-      
-      <button className="logIn" onClick={openRegisterCard} >
-      <FontAwesomeIcon icon={faCircleUser} style={{ color:'orange' , fontSize:'2rem'}} />
-      Log In
-      </button>
-     
-      {register ? <Register /> : undefined}
-         
 
+        <button className="logIn" onClick={openRegisterCard} >
+          <FontAwesomeIcon icon={faCircleUser} style={{ color: 'orange', fontSize: '2rem' }} />
+          Log In
+        </button>
 
-       
-
-
+        {register ? < Register
+          unset={openRegisterCard}
+        /> : undefined}
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <FontAwesomeIcon icon={faBars} style={{ color: "white" }} />
@@ -70,7 +61,7 @@ export default function Navbar() {
         </div>
         <a className="navbar-brand" href="#"><img className="logo" src={logo} alt="logo" /></a>
       </div>
-     
+
     </nav>
 
   )
