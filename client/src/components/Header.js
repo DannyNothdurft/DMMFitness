@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Typed from "react-typed"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
 
+import Chat from './Chat'
 export default function Header() {
-   
+   const [chat, setChat] = useState(false)
+
+  const openChatCard = () => {
+    setChat(!chat);
+  }
+
     return (
         <div className="header-wraper">
             
@@ -17,10 +25,17 @@ export default function Header() {
                 backSpeed={85}
                 loop
             />
+            {chat ? < Chat
+          chat={chat}
+          setChat={setChat}
+        /> : undefined}
             <button
                 className="btn-main-offer"
             >Start Today</button>
-
+ <button className="chatIcon" onClick={openChatCard} style={{backgroundColor: 'transparent', border:'none'}} >
+          <FontAwesomeIcon icon={faCommentDots} style={{color:'white',fontSize:'3.5rem'}} />
+     <p className="chatText" style= {{color:'white'}}> Chat With Us</p>
+        </button>
            
         </div>
     )

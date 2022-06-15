@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@chakra-ui/react": "^2.2.1",
+=======
+    "@emailjs/browser": "^3.6.2",
+>>>>>>> main
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -26,6 +30,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.4",
     "react-typed": "^1.2.0",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
