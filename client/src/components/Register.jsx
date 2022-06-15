@@ -12,7 +12,11 @@ import Logo from '../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
-function Register({ unset }) {
+function Register({ register, setRegister }) {
+
+    const closeRegisterCard = () => {
+        setRegister(!register);
+    }
 
     const navigate = useNavigate();
     const toastOptions = {
@@ -36,14 +40,14 @@ function Register({ unset }) {
     }
 
     const handleValidation = () => {
-        const { password, confirmPassword, username, email } = values;
+        const { password, confirmPassword, firstname, lastname, email } = values;
         if (password !== confirmPassword) {
             toast.error(
                 "Password and confirm password should be same.",
                 toastOptions
             );
             return false;
-        } else if (username.length < 3) {
+        } else if (firstname.length < 3 || lastname.length < 3) {
             toast.error(
                 "Username should be greater than 3 characters.",
                 toastOptions
@@ -66,10 +70,11 @@ function Register({ unset }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (handleValidation()) {
-            const { email, firstname, lastname, password } = values;
+            const { email, firstname, lastname, phone, password } = values;
             const { data } = await axios.post(registerRoute, {
                 firstname,
                 lastname,
+                phone,
                 email,
                 password,
             });
@@ -82,6 +87,7 @@ function Register({ unset }) {
                     process.env.REACT_APP_LOCALHOST_KEY,
                     JSON.stringify(data.user)
                 );
+                closeRegisterCard();
                 navigate("/");
             }
         }
@@ -91,7 +97,7 @@ function Register({ unset }) {
 
         <div className='overlay'>
             <div className='register-card'>
-                <button onClick={unset} className='close-button'>
+                <button onClick={closeRegisterCard} className='close-button'>
                     <FontAwesomeIcon icon={faXmark} />
                 </button>
                 <img className='logo' src={Logo} alt="DMM-Fitness" />
