@@ -68,12 +68,12 @@ function Chat({ chat, setChat }) {
         "service_xip9mjp",
         "template_zyk3e7d",
         form.current,
-        "replace with user id"
+        "jdx_FpjNzwiQTlzqh"
       )
       .then(
         (result) => {
           console.log(result.text);
-          console.log(e.target.reset);
+          console.log('Your mail is sent!');
         },
         (error) => {
           console.log(error.text);
