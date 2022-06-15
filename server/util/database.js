@@ -1,4 +1,4 @@
-import { Db, MongoClient, ServerApiVersion }  from 'mongodb';
+const { Db, MongoClient, ServerApiVersion } = require('mongodb')
 
 // const pwd = process.env.MONGO_DB_PWD;
 const pwd = 'dmmfitness'; // HIER EUER PASSWORT (noch auslagern)
@@ -29,11 +29,11 @@ async function mongoConnect() {
 
   try {
     await _client.connect();
-    
+
     _db = _client.db(); // mit pangaea verbinden
     listMyDatabases(); // optional: listet vorhandene Datenbanken auf (async function but waiting is not neccessary)
     return true;
-  } catch(err) {
+  } catch (err) {
     console.error("Connection to MongoDB Failed:", err);
     return false;
   }
@@ -48,7 +48,7 @@ async function mongoConnect() {
  * 
  * @returns {Db}
  */
-function getDb(){
+function getDb() {
   return _db ? _db : false
 }
 
@@ -62,4 +62,4 @@ async function listMyDatabases() {
   databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 };
 
-export {mongoConnect, getDb}
+module.exports = { mongoConnect, getDb }
