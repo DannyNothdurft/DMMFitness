@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
-import { ToastContainer} from "react-toastify";
-import '../styles/register.scss';
+
+
 
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
@@ -9,9 +9,7 @@ import styled from "styled-components";
 // images
 import Logo from '../images/logo.png';
 
-// REACT FONTAWESOME IMPORTS 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+
 
 function Chat({ chat, setChat }) {
 
@@ -28,11 +26,11 @@ function Chat({ chat, setChat }) {
       height: 35px;
       padding: 7px;
       outline: none;
-      border-radius: 5px;
+       border-radius: 5px;
       border: 1px solid rgb(220, 220, 220);
       &:focus {
         border: 2px solid rgba(0, 206, 158, 1);
-      }
+      } 
     }
     textarea {
       max-width: 100%;
@@ -93,15 +91,17 @@ function Chat({ chat, setChat }) {
 
     return (
 
-        <div className='overlay'>
-            <div className='register-card' style={{backgroundColor:'grey'}}>
-                <button onClick={closeChatCard} className='close-button'>
-                    <FontAwesomeIcon icon={faXmark} />
+        <div className='chat-forn'>
+            <div className='chat-card' style={{backgroundColor:'grey'}}>
+              
+                <button onClick={closeChatCard} 
+                className='btn-close'>
+            
                 </button>
-                <img className='logo' src={Logo} alt="DMM-Fitness" />
+                <img className='dmmLogo' src={Logo} alt="DMM-Fitness" />
 
                 <form >
-                <StyledContactForm>
+                 <StyledContactForm>
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="user_name" />
@@ -111,10 +111,10 @@ function Chat({ chat, setChat }) {
         <textarea name="message" />
         <input type="submit" value="Send" />
       </form>
-    </StyledContactForm>
+    </StyledContactForm> 
                 </form>
             </div>
-            <ToastContainer />
+        
         </div>
     )
 }
