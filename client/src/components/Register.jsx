@@ -1,8 +1,11 @@
 import React from 'react'
+import '../styles/register.scss';
 
 function Register() {
     return (
-        <div>Register</div>
+        <div className='register-card'>
+            Register
+        </div>
     )
 }
 
