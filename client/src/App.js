@@ -6,11 +6,11 @@ import './App.css';
 // Components
 import Navbar from './components/Navbar';
 import Header from './components/Header';
+import cities from 'cities.json';
 
-import { ChakraProvider, theme } from '@chakra-ui/react'
 // Pages
 import Shop from './pages/Shop';
-import Map from './pages/Map';
+import MarkersMap from './pages/markers';
 import About from './pages/About'
 
 function App() {
@@ -24,9 +24,9 @@ function App() {
         <Route path='/' element={<Header />} />
         <Route path='/shop' element={<Shop />} />
 
-        <Route path='/findStudio' element={<ChakraProvider theme={theme}>
-      <Map />
-    </ChakraProvider>} />
+        <Route path='/locations' element={
+      <MarkersMap />
+   } />
 
         <Route path='/aboutus' element={<About />} />
 

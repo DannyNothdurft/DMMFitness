@@ -56,7 +56,7 @@ export default function Navbar() {
               <Link to='/shop' target='_blank'>Shop </Link>
             </li>
             <li className="nav-item active">
-              <Link to='/findStudio'>Find Studio</Link>
+              <Link to='/locations'>Find Studio</Link>
             </li>
 
           </ul>
