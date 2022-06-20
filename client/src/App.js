@@ -6,13 +6,13 @@ import './App.css';
 // Components
 import Navbar from './components/Navbar';
 import Header from './components/Header';
-import cities from 'cities.json';
+
 
 // Pages
 import Shop from './pages/Shop';
-import MarkersMap from './pages/markers';
+import MarkersMap from './pages/Map';
 import About from './pages/About'
-
+import SearchItem from '../src/components/Search'
 function App() {
 
   return (
@@ -26,6 +26,9 @@ function App() {
 
         <Route path='/locations' element={
       <MarkersMap />
+   } />
+     <Route path='/classes' element={
+      <SearchItem />
    } />
 
         <Route path='/aboutus' element={<About />} />
