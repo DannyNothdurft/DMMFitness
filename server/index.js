@@ -22,6 +22,12 @@ mongoose
         console.log(err.message);
     });
 
+
+mongoose.connection.on("disconnected", () => {
+    console.log("mongoDB disconnected!");
+  });
+   
+
 app.use("/api/auth", authRoutes);
 
 const server = app.listen(process.env.PORT, () =>

@@ -12,7 +12,7 @@ const FeaturedProperties = () => {
         />
         <span className="fpName">Group Workout</span>
         <span className="fpCity"></span>
-        <span className="fpPrice">Starting from €50</span>
+        <span className="fpPrice">from €50</span>
      
       </div>
       <div className="fpItem">
@@ -23,7 +23,7 @@ const FeaturedProperties = () => {
         />
         <span className="fpName">Personal Training</span>
         <span className="fpCity"></span>
-        <span className="fpPrice">Starting from €80</span>
+        <span className="fpPrice">from €80</span>
      
       </div>
       <div className="fpItem">
@@ -34,7 +34,7 @@ const FeaturedProperties = () => {
         />
         <span className="fpName">HIIT Workout</span>
         <span className="fpCity"></span>
-        <span className="fpPrice">Starting from €69</span>
+        <span className="fpPrice">from €69</span>
        
       </div>
       <div className="fpItem">
@@ -45,7 +45,7 @@ const FeaturedProperties = () => {
         />
         <span className="fpName">Spinning Classes</span>
         <span className="fpCity"></span>
-        <span className="fpPrice">Starting from €99</span>
+        <span className="fpPrice">from €99</span>
        
       </div>
     </div>

@@ -11,6 +11,10 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
+    border: 2px solid whitesmoke;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 1.5rem;
   }
   
   .fpImg{
@@ -20,8 +24,9 @@
   }
   
   .fpName{
-    color: #333;
+    color: rgb(37, 31, 18);
     font-weight: bold;
+    text-decoration: underline;
   }
   
   .fpCity{
@@ -29,18 +34,8 @@
   }
   
   .fpPrice{
+    color: white;
     font-weight: 500;
   }
   
-  .fpRating>button{
-    background-color: #003580;
-    color: white;
-    border: none;
-    padding: 3px;
-    margin-right: 10px;
-    font-weight: bold;
-  }
   
-  .fpRating>span{
-    font-size: 14px;
-  }
