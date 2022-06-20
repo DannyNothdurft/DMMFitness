@@ -28,7 +28,7 @@ const MarkersMap = () => {
       <div className="row">
         <div className="col text-center">
           <h2 style={{fontWeight:'bold'}}>Our Locations</h2>
-          <p style={{color:'red', fontSize:'1.5rem', fontWeight:'bold'}}>You can find us all over Europe</p>
+          <p style={{color:'red', fontSize:'1.5rem', fontWeight:'bold', textDecoration:'underline'}}>You can find us all over Europe</p>
           <div className="col">
             <MapContainer center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
               <TileLayer

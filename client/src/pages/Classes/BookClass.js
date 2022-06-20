@@ -4,7 +4,7 @@ import "./bookClass.css";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: 'grey', height: '100vh'}}>
       <SearchItem />
      
       <div className="homeContainer">
