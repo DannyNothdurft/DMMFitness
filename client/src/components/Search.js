@@ -62,12 +62,17 @@ import {
               <span>Group Classes</span>
             </div>
             <div className="headerListItem">
+              <FontAwesomeIcon icon={faPerson} />
+              <span>Personal Training</span>
+            </div>
+            <div className="headerListItem">
               <FontAwesomeIcon icon={faHeartCircleBolt} />
               <span>HIIT Classes</span>
             </div>
+           
             <div className="headerListItem">
               <FontAwesomeIcon icon={faPersonBiking} />
-              <span>Cycling Classes</span>
+              <span>Spinning Classes</span>
             </div>
            
             
