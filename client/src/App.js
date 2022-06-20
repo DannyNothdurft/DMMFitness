@@ -12,7 +12,7 @@ import Header from './components/Header';
 import Shop from './pages/Shop';
 import MarkersMap from './pages/Map';
 import About from './pages/About'
-import SearchItem from '../src/components/Search'
+import Home  from './pages/Classes/BookClass.js'
 function App() {
 
   return (
@@ -28,7 +28,7 @@ function App() {
       <MarkersMap />
    } />
      <Route path='/classes' element={
-      <SearchItem />
+      <Home />
    } />
 
         <Route path='/aboutus' element={<About />} />
