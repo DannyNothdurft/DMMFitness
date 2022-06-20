@@ -27,8 +27,8 @@ const MarkersMap = () => {
      
       <div className="row">
         <div className="col text-center">
-          <h2>Our Locations</h2>
-          <p>You can find us all over Europe</p>
+          <h2 style={{fontWeight:'bold'}}>Our Locations</h2>
+          <p style={{color:'red', fontSize:'1.5rem', fontWeight:'bold'}}>You can find us all over Europe</p>
           <div className="col">
             <MapContainer center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
               <TileLayer
@@ -44,7 +44,7 @@ const MarkersMap = () => {
                 >
                   <Popup>
                     <b>
-                      {city.city}, {city.country}
+                   {city.address},{" "}{city.postalCode}<br/>   {city.city}, {city.country}
                     </b>
                   </Popup>
                 </Marker>
