@@ -49,7 +49,7 @@ body {
   border-top: 0.18rem solid var(--primary-orange);
 }
 
-/*-------HEADER --------*/
+
  video {
   object-fit: cover;
   width: 100%;
@@ -125,7 +125,8 @@ body {
         top: 10px;
         }
         
-.header-wraper {
+        
+  .header-wraper {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -135,7 +136,7 @@ body {
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   object-fit: contain;
 
-}
+} 
 
 .main-info {
   display: flex;

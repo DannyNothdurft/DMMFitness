@@ -19,13 +19,14 @@
   }
   
   .headerList {
-   
+    
     display: flex;
     gap: 40px;
     margin-bottom: 50px;
   }
   
   .headerListItem {
+   
     display: flex;
     align-items: center;
     gap: 10px;
@@ -35,6 +36,7 @@
     border: 1px solid orange;
     padding: 10px;
     border-radius: 20px;
+   
   }
   
   .headerDesc {
@@ -88,7 +90,7 @@
   .headerSearchText {
     color:rgb(88, 85, 85);
     cursor: pointer;
-    font-size: 1rem; 
+  
   }
   
   .date {
