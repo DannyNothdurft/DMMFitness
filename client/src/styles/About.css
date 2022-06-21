@@ -13,26 +13,16 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
   color: #333;
   height: 100%;
   transition: background-color 0.25s ease-in-out;
+ 
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+ justify-content: center; 
+  align-items: center; 
+  
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 14px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
 
 .switch {
   position: relative;
@@ -98,10 +88,12 @@ input:checked + .slider:before {
 }
 
 
-.typed-text {
+.typ-text {
   display:flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
 } 
 
 h1 {
@@ -109,4 +101,17 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-top: 1rem
+}
+.content {
+  text-align: center;
+  font-size:1.2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.log-about {
+  font-size:1.6rem;
+  color: black;
+  text-shadow: 1px 1px orange;
+  font-weight: bold;
 }
