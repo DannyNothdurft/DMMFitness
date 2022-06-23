@@ -35,7 +35,7 @@ export default function About() {
         <span className="log-about">DMM </span> was born from a desire to be THE BEST PROJECT-SITE EVER for our Final Project. <br/> <span className="log-about">DMM</span> is owned and operated from a small team of passionate individuals Danny, Marija and Magdelena. <br/> Regardless of  your age or physical fitness level, DMM is an all-inclusive group  fitness studio that offers a variety of group and individual level  programming to meet your needs.<br/>
 
         Everything at <span className="log-about">DMM</span> is month to month, and we don't use contracts.<br/>  Our approach ensures we continue to deliver a high-quality experience  for you day after day.<br/> We want you to enjoy <span className="log-about">DMM</span> as much as we enjoy  having you in our studio.​ </div>
-       <div className="glassCard" style={{color: darkMode ? "#DCDCDC" : "#2F4F4F"}}>
+       <div className="glassCard" style={{color: darkMode ? "#DCDCDC" : "black"}}>
         <video className="video-card" src="../videos/smoke.mp4" autoPlay loop muted />
         <GlassCardDanny className={darkMode ? "dark-mode" : "light-mode"}/>
          <GlassCard/>

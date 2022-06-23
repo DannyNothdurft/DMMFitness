@@ -6,9 +6,10 @@ import { useSpring, animated, config } from 'react-spring';
 const Container = styled(animated.div)`
 display: inline-block;
 padding: 3em;
-background: #2f4353;
-background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
-border-radius: 10px;
+background: transparent;
+background-image: linear-gradient(-315deg, transparent 0%, #d2ccc4 99%);
+
+ border-radius: 10px;
 z-index: 1;
 position: relative;
 backdrop-filter: blur(10px);
