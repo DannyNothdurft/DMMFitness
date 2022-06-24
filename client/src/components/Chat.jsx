@@ -1,9 +1,6 @@
-import React, { useRef } from 'react'
-
-
-
-
-import emailjs from "@emailjs/browser";
+import React, {useState, useRef } from 'react'
+import emailjs from '@emailjs/browser';
+/* import emailjs from "emailjs-com"; */
 import styled from "styled-components";
 
 // images
@@ -58,20 +55,14 @@ function Chat({ chat, setChat }) {
     }
   }
 `;
-      const form = useRef();
-
+   const form = useRef(); 
+const [result, showResult] = useState(false)
   const sendEmail = (e) => {
+
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_xip9mjp",
-        "template_zyk3e7d",
-        form.current,
-        "jdx_FpjNzwiQTlzqh"
-      )
-      .then(
-        (result) => {
+    emailjs.sendForm( 'gmail','template_o3uqwpo', form.current,'jdx_FpjNzwiQTlzqh' )
+      .then((result) => {
           console.log(result.text);
           console.log('Your mail is sent!');
         },
@@ -79,6 +70,8 @@ function Chat({ chat, setChat }) {
           console.log(error.text);
         }
       );
+      e.target.reset()
+      showResult(true)
   };
     const closeChatCard = () => {
         setChat(!chat);
@@ -91,7 +84,7 @@ function Chat({ chat, setChat }) {
 
     return (
 
-        <div className='chat-forn'>
+        <div className='chat-form'>
             <div className='chat-card' style={{backgroundColor:'grey'}}>
               
                 <button onClick={closeChatCard} 
@@ -102,11 +95,12 @@ function Chat({ chat, setChat }) {
 
                 <form >
                  <StyledContactForm>
-      <form ref={form} onSubmit={sendEmail}>
+      <form  onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="user_name" />
         <label>Email</label>
         <input type="email" name="user_email" />
+        
         <label>Message</label>
         <textarea name="message" />
         <input type="submit" value="Send" />
