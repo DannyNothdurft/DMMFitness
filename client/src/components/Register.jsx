@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import axios from "axios";
-import { useNavigate, Link } from 'react-router-dom';
-import { ToastContainer, toast } from "react-toastify";
+import { useNavigate, Link, Navigate } from 'react-router-dom';
 import '../styles/register.scss';
-import { registerRoute } from "../utils/APIRoutes";
+
 
 // images
 import Logo from '../images/logo.png';
@@ -19,131 +18,115 @@ function Register({ register, setRegister }) {
     }
 
     const navigate = useNavigate();
-    const toastOptions = {
-        position: "bottom-right",
-        autoClose: 8000,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-    };
-    const [values, setValues] = useState({
-        firstname: "",
-        lastname: "",
+ 
+    const [data, setData] = useState({
+        firstName: "",
+        lastName: "",
         phone: "",
         email: "",
         password: "",
         confirmPassword: "",
     })
+    const [error, setError] = useState("");
+    
+    const handleChange = ({ currentTarget: input }) => {
+		setData({ ...data, [input.name]: input.value });
+	};
+  
 
-    const handleChange = (event) => {
-        setValues({ ...values, [event.target.name]: event.target.value });
-    }
 
-    const handleValidation = () => {
-        const { password, confirmPassword, firstname, lastname, email } = values;
-        if (password !== confirmPassword) {
-            toast.error(
-                "Password and confirm password should be same.",
-                toastOptions
-            );
-            return false;
-        } else if (firstname.length < 3 || lastname.length < 3) {
-            toast.error(
-                "Username should be greater than 3 characters.",
-                toastOptions
-            );
-            return false;
-        } else if (password.length < 8) {
-            toast.error(
-                "Password should be equal or greater than 8 characters.",
-                toastOptions
-            );
-            return false;
-        } else if (email === "") {
-            toast.error("Email is required.", toastOptions);
-            return false;
-        }
-
-        return true;
-    };
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        if (handleValidation()) {
-            const { email, firstname, lastname, phone, password } = values;
-            const { data } = await axios.post(registerRoute, {
-                firstname,
-                lastname,
-                phone,
-                email,
-                password,
-            });
-
-            if (data.status === false) {
-                toast.error(data.msg, toastOptions);
-            }
-            if (data.status === true) {
-                localStorage.setItem(
-                    process.env.REACT_APP_LOCALHOST_KEY,
-                    JSON.stringify(data.user)
-                );
-                closeRegisterCard();
-                navigate("/");
-            }
-        }
-    };
-
+    const handleSubmit = async (e) => {
+		e.preventDefault();
+      
+   
+        
+		try {
+			const url = "http://localhost:4000/api/auth/register";
+			const { data: res } = await axios.post(url, data);
+			console.log(data);
+            closeRegisterCard();
+            alert("You are successfuly register! Log In");
+			navigate("/login");
+			
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+    
+    
+	};
+   
+ 
+    
     return (
 
-        <div className='overlay'>
+        <div style={{zIndex:'1000'}} className='overlay'>
             <div className='register-card' style={{backgroundColor:'grey'}}>
                 <button onClick={closeRegisterCard} className='close-button'>
                     <FontAwesomeIcon icon={faXmark} />
                 </button>
                 <img className='logo' src={Logo} alt="DMM-Fitness" />
 
-                <form onSubmit={(event) => handleSubmit(event)}>
+                <form onSubmit={handleSubmit}>
                     <input
+                        required
                         type="text"
-                        placeholder='Firstname'
-                        name='firstname'
-                        onChange={(e) => handleChange(e)}
+                        placeholder='First Name'
+                        name='firstName'
+                        onChange={handleChange}
+                        value={data.firstName}
                     />
                     <input
+                        required
                         type="text"
-                        placeholder='Lastname'
-                        name='lastname'
-                        onChange={(e) => handleChange(e)}
+                        placeholder='Last Name'
+                        value={data.lastName}
+                        name='lastName'
+                        onChange={handleChange}
                     />
                     <input
+
                         type="tel"
                         placeholder='Mobile Number'
                         name='phone'
-                        onChange={(e) => handleChange(e)}
+                        value={data.phone}
+                        onChange={handleChange}
                     />
                     <input
-                        type="email"
+                         required
+                        type="text"
                         placeholder='E-Mail'
                         name='email'
-                        onChange={(e) => handleChange(e)}
+                        value={data.email}
+                        onChange={handleChange}
                     />
                     <input
+                        required
                         type="password"
                         placeholder='Password'
+                        value={data.password}
                         name='password'
-                        onChange={(e) => handleChange(e)}
+                        onChange={handleChange}
                     />
                     <input
+                        required
                         type="password"
                         placeholder='Confirm Password'
                         name='confirmPassword'
-                        onChange={(e) => handleChange(e)}
+                        value={data.confirmPassword}
+                        onChange={handleChange}
                     />
+                    {error && <div>{error}</div>}
                     <button className='submit-button' type='submit'>Create User</button>
-                    <span>already have an account ? <Link to="/login">Login</Link> </span>
+                    <span>already have an account ? <Link onClick={closeRegisterCard} to="/login">Login</Link> </span>
                 </form>
             </div>
-            <ToastContainer />
+           
         </div>
     )
 }

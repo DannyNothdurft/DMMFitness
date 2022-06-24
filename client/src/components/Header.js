@@ -14,7 +14,7 @@ export default function Header() {
   }
 
     return (
-        <div className="header-wraper">
+        <div style={{height:'85vh', overflow:'hidden'}} className="header-wraper">
             
             <video src="/videos/home3.mp4" autoPlay loop muted /> 
         
