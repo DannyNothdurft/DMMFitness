@@ -12,13 +12,13 @@ import cors from "cors";
 
 
 
-const app = express();
+
 
 const PORT = process.env.PORT || 4000;
 
 
 
-
+const app = express();
 app.use(express.json());
 dotenv.config();
 
@@ -64,6 +64,6 @@ app.use("/api/hotels", hotelsRoute);
 
  
 
-const server = app.listen(PORT, () =>
+const server = app.listen(() =>
     console.log(`Server started on ${process.env.PORT}`)
 );
