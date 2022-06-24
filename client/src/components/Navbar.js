@@ -65,9 +65,6 @@ export default function Navbar() {
             <li className="nav-item">
               <Link to='/classes'>Classes </Link>
             </li>
-            <li className="nav-item">
-              <Link to='/pricing'>Pricing </Link>
-            </li>
             <li className="nav-item active">
               <Link to='/shop' target='_blank'>Shop </Link>
             </li>

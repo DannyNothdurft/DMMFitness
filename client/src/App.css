@@ -18,7 +18,9 @@ body {
 .logo {
   width: 150px;
 }
-
+.navbar-nav {
+  margin-left:6rem;
+}
 .navbar-nav>li {
 
   white-space: nowrap;

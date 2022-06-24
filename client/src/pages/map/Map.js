@@ -25,7 +25,7 @@ const MarkersMap = () => {
   return (
     <>
      
-      <div className="row">
+      <div className="row" style={{backgroundColor: "#485461", backgroundImage: 'linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%)', height: '100vh'}}>
         <div className="col text-center">
           <h2 style={{fontWeight:'bold'}}>Our Locations</h2>
           <p style={{color:'red', fontSize:'1.5rem', fontWeight:'bold', textDecoration:'underline'}}>You can find us all over Europe</p>
