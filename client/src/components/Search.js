@@ -1,4 +1,4 @@
-import {
+/* import {
   faPeopleGroup,
   faHeartCircleBolt,
   faPersonBiking,
@@ -27,9 +27,7 @@ const Header = ({ type }) => {
   ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
+    adult: 1
   });
 
   const navigate = useNavigate();
@@ -44,7 +42,7 @@ const Header = ({ type }) => {
   };
 
   const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
+    navigate("/class", { state: { destination, date, options } });
   };
 
   return (
@@ -153,3 +151,4 @@ const Header = ({ type }) => {
 };
 
 export default Header;
+ */

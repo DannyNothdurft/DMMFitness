@@ -8,7 +8,7 @@ export default function About() {
    const [darkMode, setDarkMode] = useState(false);
 
     return (
-        <div className={darkMode ? "dark-mode" : "light-mode"}>
+        <div style={{height: '100vh'}}className={darkMode ? "dark-mode" : "light-mode"}>
       <div className="container">
         <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
         <div className="switch-checkbox">
