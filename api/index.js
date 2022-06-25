@@ -64,6 +64,6 @@ app.use("/api/hotels", hotelsRoute);
 
  
 
-const server = app.listen(() =>
+const server = app.listen(4000,() =>
     console.log(`Server started on ${process.env.PORT}`)
 );
