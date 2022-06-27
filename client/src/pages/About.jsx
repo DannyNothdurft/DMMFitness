@@ -30,7 +30,7 @@ export default function About() {
                 loop
             />
             <div className="content"> 
-        <span className="log-about"> DMM.Fitness </span> is a boutique fitness studios all around Europe, that offers group fitness classes in Sixty, our original concept HIIT class, Cycle and Yoga. <br/> In addition to group classes, we have an always open "Sweat Lab" that allows you to conduct individual training, on your own, or with a personal training. <br/> <span className="log-about">DMM.Fitness </span>is NOT your average gym. <br/>
+        <span className="log-about"> DMM.Fitness   </span> is a boutique fitness studios all around Europe, that offers group fitness classes in Sixty, our original concept HIIT class, Cycle and Yoga. <br/> In addition to group classes, we have an always open "Sweat Lab" that allows you to conduct individual training, on your own, or with a personal training. <br/> <span className="log-about">DMM.Fitness </span>is NOT your average gym. <br/>
 
         <span className="log-about"> DMM.Fitness </span> was born from a desire to be THE BEST PROJECT-SITE EVER for our Final Project. <br/> <span className="log-about">DMM.Fitness </span> is owned and operated from a small team of passionate individuals Danny, Marija and Magdelena. <br/> Regardless of  your age or physical fitness level, DMM is an all-inclusive group  fitness studio that offers a variety of group and individual level  programming to meet your needs.<br/>
 
