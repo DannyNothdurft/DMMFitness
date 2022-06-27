@@ -78,6 +78,9 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  width: 50px;
+  height: 30px;
+ margin-top: -1.5rem;
 }
 
 .slider.round:before {
@@ -88,9 +91,7 @@ input:checked + .slider:before {
 }
 
 
-<<<<<<< HEAD
 
-=======
 .typ-text {
   display:flex;
   justify-content: center;
@@ -98,7 +99,6 @@ input:checked + .slider:before {
   font-size: 2rem;
   font-weight: bold;
 } 
->>>>>>> main
 
 h1 {
   display: flex;
