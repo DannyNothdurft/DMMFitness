@@ -39,8 +39,8 @@ function App() {
    } />
  
         <Route path="/classes" element={<Home/>}/>
-        <Route path="/hotels" element={<List/>}/>
-        <Route path="/hotels/:id" element={<Hotel/>}/>
+        <Route path="/studios" element={<List/>}/>
+        <Route path="/studios/:id" element={<Hotel/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path='/aboutus' element={<About />} />
         <Route path='/' exact element={<Register />}/>

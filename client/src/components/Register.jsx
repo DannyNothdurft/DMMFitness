@@ -123,7 +123,7 @@ function Register({ register, setRegister }) {
                     />
                     {error && <div>{error}</div>}
                     <button className='submit-button' type='submit'>Create User</button>
-                    <span>already have an account ? <Link onClick={closeRegisterCard} to="/login">Login</Link> </span>
+                    <span>already have an account ? <Link style={{fontSize: '1.4rem', marginLeft:'8px'}} onClick={closeRegisterCard} to="/login">Login</Link> </span>
                 </form>
             </div>
            

@@ -1,6 +1,5 @@
 import "./hotel.css";
-import Navbar from "../../../components/navbar/Navbar";
-import Header from "../../../components/header/Header";
+import Header from "../../../components/classesHeader/Header";
 import MailList from "../../../components/mailList/MailList";
 import Footer from "../../../components/footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,14 +16,14 @@ import { SearchContext } from "../../../context/SearchContext";
 import { AuthContext } from "../../../context/AuthContext";
 import Reserve from "../../../components/reserve/Reserve";
 
-const Hotel = () => {
+const Studio = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  const { data, loading, error } = useFetch(`/studios/find/${id}`);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -65,7 +64,7 @@ const Hotel = () => {
   };
   return (
     <div>
-      <Navbar />
+  
       <Header type="list" />
       {loading ? (
         "loading"
@@ -146,9 +145,9 @@ const Hotel = () => {
           <Footer />
         </div>
       )}
-      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
+      {openModal && <Reserve setOpen={setOpenModal} studioId={id}/>}
     </div>
   );
 };
 
-export default Hotel;
+export default Studio;

@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+import User from "../models/Studio.js";
 
 export const updateUser = async (req,res,next)=>{
   try {
