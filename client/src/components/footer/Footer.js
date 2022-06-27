@@ -9,32 +9,31 @@ const Footer = () => {
           <li className="fListItem">Regions</li>
           <li className="fListItem">Cities</li>
           <li className="fListItem">Districts</li>
-          <li className="fListItem">Airports</li>
-          <li className="fListItem">Hotels</li>
+          <li className="fListItem">Fitness Studios</li>
+      
         </ul>
         <ul className="fList">
-          <li className="fListItem">Homes </li>
-          <li className="fListItem">Apartments </li>
-          <li className="fListItem">Resorts </li>
-          <li className="fListItem">Villas</li>
-          <li className="fListItem">Hostels</li>
-          <li className="fListItem">Guest houses</li>
+          <li className="fListItem">Group Workout </li>
+          <li className="fListItem">Personal Training </li>
+          <li className="fListItem">HIT Workout </li>
+          <li className="fListItem">Spinning</li>
+          <li className="fListItem">Yoga</li>
+          <li className="fListItem">CrossFit</li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Unique places to stay </li>
+          <li className="fListItem">Unique places for your workout </li>
           <li className="fListItem">Reviews</li>
-          <li className="fListItem">Unpacked: Travel articles </li>
-          <li className="fListItem">Travel communities </li>
+          <li className="fListItem">Fitness communities </li>
           <li className="fListItem">Seasonal and holiday deals </li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Car rental </li>
-          <li className="fListItem">Flight Finder</li>
-          <li className="fListItem">Restaurant reservations </li>
-          <li className="fListItem">Travel Agents </li>
+          <li className="fListItem">Gift Card</li>
+          <li className="fListItem">Loyalty Program</li>
+          <li className="fListItem">Workout reservations </li>
+          <li className="fListItem">FIT 3D Scans </li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Curtomer Service</li>
+          <li className="fListItem">Customer Service</li>
           <li className="fListItem">Partner Help</li>
           <li className="fListItem">Careers</li>
           <li className="fListItem">Sustainability</li>

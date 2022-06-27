@@ -1,10 +1,9 @@
 import {
     faBed,
     faCalendarDays,
-    faCar,
-    faPerson,
-    faPlane,
-    faTaxi,
+    faLocationDot,
+    faPerson
+   
   } from "@fortawesome/free-solid-svg-icons";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   import "./header.css";
@@ -50,8 +49,14 @@ import {
     const { dispatch } = useContext(SearchContext);
   
     const handleSearch = () => {
-      dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
-      navigate("/hotels", { state: { destination, dates, options } });
+      if(destination.length===0) {
+          alert('Please write Fitness LOCATION and DATE')
+      }
+      else {
+        dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+        navigate("/studios", { state: { destination, dates, options } });
+      }
+      
     };
   
     return (
@@ -64,24 +69,25 @@ import {
          
           {type !== "list" && (
             <>
-              <h1 className="headerTitle">
-              Book Your Classes NOW!
+              <h1 style={{textAlign: "center"}} className="headerTitle">
+             DON'T WAIT! <br/> Book Your Classes NOW!
               </h1>
-              <p className="headerDesc">
-                Get rewarded for your travels – unlock instant savings of 10% or
-                more with a free Lamabooking account
+              <p style ={{fontSize:'15px', textAlign:'center'}}className="headerDesc">
+              <span style={{color:'orange',fontSize:'20px'}}>Get rewarded for your effort </span> – unlock instant savings of <span style={{color:'orange',fontSize:'20px'}}>10%</span>  or
+                more with a free<span style={{color:'orange',fontSize:'20px'}}> DMM-FITNESS</span> Account
               </p>
-              {!user && <button className="headerBtn">Sign in / Register</button>}
+              
               <div className="headerSearch">
                 <div className="headerSearchItem">
-                  <FontAwesomeIcon icon={faBed} className="headerIcon" />
-                  <input
+                  <FontAwesomeIcon icon={faLocationDot} className="headerIcon" />
+                  <input 
                     type="text"
-                    placeholder="Where are you going?"
+                    placeholder="Your Fitness Location"
                     className="headerSearchInput"
                     onChange={(e) => setDestination(e.target.value)}
                   />
                 </div>
+                {destination.length===0? "true" :"false"}
                 <div className="headerSearchItem">
                   <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                   <span
@@ -107,7 +113,7 @@ import {
                   <span
                     onClick={() => setOpenOptions(!openOptions)}
                     className="headerSearchText"
-                  >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+                  >{`${options.adult} adult`}</span>
                   {openOptions && (
                     <div className="options">
                       <div className="optionItem">
@@ -131,48 +137,7 @@ import {
                           </button>
                         </div>
                       </div>
-                      <div className="optionItem">
-                        <span className="optionText">Children</span>
-                        <div className="optionCounter">
-                          <button
-                            disabled={options.children <= 0}
-                            className="optionCounterButton"
-                            onClick={() => handleOption("children", "d")}
-                          >
-                            -
-                          </button>
-                          <span className="optionCounterNumber">
-                            {options.children}
-                          </span>
-                          <button
-                            className="optionCounterButton"
-                            onClick={() => handleOption("children", "i")}
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                      <div className="optionItem">
-                        <span className="optionText">Room</span>
-                        <div className="optionCounter">
-                          <button
-                            disabled={options.room <= 1}
-                            className="optionCounterButton"
-                            onClick={() => handleOption("room", "d")}
-                          >
-                            -
-                          </button>
-                          <span className="optionCounterNumber">
-                            {options.room}
-                          </span>
-                          <button
-                            className="optionCounterButton"
-                            onClick={() => handleOption("room", "i")}
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
+                      
                     </div>
                   )}
                 </div>

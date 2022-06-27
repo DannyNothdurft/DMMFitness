@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import Typed from "react-typed"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,12 +15,12 @@ export default function Header() {
   }
 
     return (
-        <div style={{height:'85vh', overflow:'hidden'}} className="header-wraper">
+        <div style={{height:'91.700vh', overflow:'hidden'}} className="header-wraper">
             
-            <video src="/videos/home3.mp4" autoPlay loop muted /> 
+            <video style={{position:'sticky'}} src="/videos/home3.mp4" autoPlay loop muted /> 
         
-            <h1>Welcome in our Fitness World</h1>
-            <Typed
+            <h1 style={{position:'absolute', bottom:'400px'}}>Welcome in our Fitness World</h1>
+            <Typed style={{position:'absolute', bottom:'350px'}}
                 className="typed-text"
                 strings={["D-Dedicate.", "M-Motivate.", "M-Make Your First Step!."]}
                 typedSpeed={20}
@@ -30,9 +31,9 @@ export default function Header() {
           chat={chat}
           setChat={setChat}
         /> : undefined}
-            <button
+         <Link style={{position: 'absolute', bottom: '250px'}}to='/classes'> <button 
                 className="btn-main-offer"
-            >Start Today</button>
+            >Start Today</button></Link>  
  <button className="chatIcon" onClick={openChatCard} style={{backgroundColor: 'transparent', border:'none'}} >
           <FontAwesomeIcon icon={faCommentDots} style={{color:'white',fontSize:'3.5rem'}} />
      <p className="chatText" style= {{color:'white'}}> Chat With Us</p>

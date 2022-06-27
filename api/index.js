@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auth.js";
-import hotelsRoute from "./routes/hotels.js";
+import hotelsRoute from "./routes/studio.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -47,7 +47,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
 
-app.use("/api/hotels", hotelsRoute);
+app.use("/api/studios", hotelsRoute);
   app.use("/api/rooms", roomsRoute);
  
   app.use((err, req, res, next) => {
