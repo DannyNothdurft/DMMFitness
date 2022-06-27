@@ -25,6 +25,17 @@ const MarkersMap = () => {
   const ZOOM_LEVEL = 9;
   const mapRef = useRef();
 
+const images = [
+  "https://evofitness.at/wp-content/uploads/2019/02/EVO_Banner_February_05-1200x675.jpg",
+  "https://media.istockphoto.com/photos/empty-gym-picture-id1132006407?k=20&m=1132006407&s=612x612&w=0&h=Z7nJu8jntywb9jOhvjlCS7lijbU4_hwHcxoVkxv77sg=",
+  "https://media.timeout.com/images/105613744/750/422/image.jpg",
+  "https://whateveryourdose.com/wp-content/uploads/2019/04/MOVE-2.001.jpeg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGRSnv3cWGAiKw5UppI7yFGwragAqnh3Rexg&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKHKa9RYTo54CM-cbnni-QWW0sabJpyjCmjg&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdGcGYlLojr3D5t_itkRWykmcv4VASRt2NoA&usqp=CAU",
+  "https://images.squarespace-cdn.com/content/v1/574c4fb3b6aa60d843a68222/1595068795022-MMKW1KF8ATUX6K38H7BR/Wide_v003.jpg?format=2500w"
+]
+
   return (
     <>
      
@@ -46,6 +57,7 @@ const MarkersMap = () => {
                   key={idx}
                 >
                   <Popup>
+                    {<img style={{width: '100%'}} src={images[idx]} alt=""/>}
                     <b>
                    {city.address},{" "}{city.postalCode}<br/>   {city.city}, {city.country}
                     </b>
