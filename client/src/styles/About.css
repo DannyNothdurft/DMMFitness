@@ -81,18 +81,20 @@ input:checked + .slider:before {
   width: 50px;
   height: 30px;
  margin-top: -1.5rem;
+ margin-left: .8rem;
  padding:10px;
  border: solid grey;
+ 
 }
 
 
 .slider.round:before {
-
-  border: grey solid;
+  border: #ccc solid;
   border-radius: 50%;
 }
 .switch-checkbox {
   padding: 10px;
+  
 }
 
 
@@ -109,38 +111,32 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem
+  margin-top: 1rem;
+  text-shadow: 2px 1px 1px grey;
 }
 .content {
   text-align: center;
   font-size:1.2rem;
   font-weight: bold;
+  margin-top: 2rem;
 }
 
 .log-about {
-  font-size:1.6rem;
+  font-size:1.4rem;
   transform: translate(50%,-50%);
   text-transform: uppercase;
   font-family: verdana;
   animation: smoke 6s infinite;
   color: #f5f5f5;
-  text-shadow: 1px 1px 1px black,
-      1px 2px 1px #919191,
-      1px 3px 1px #919191,
-      1px 4px 1px black,
-      1px 5px 1px #919191,
-      1px 6px 1px black,
-      1px 7px 1px #919191,
-      1px 8px 1px #919191,
-      1px 9px 1px #919191,
-      1px 10px 1px black,
-  1px 18px 6px rgba(16,16,16,0.4),
+  text-shadow: 1px 1px 10px black,
+              1px 1px 6px orange,
+  1px 1px 6px rgba(16,16,16,0.4),
   1px 22px 10px rgba(16,16,16,0.2),
-  1px 25px 35px rgba(16,16,16,0.2),
-  1px 30px 60px rgba(16,16,16,0.4);
+  1px 25px 95px rgba(16,16,16,0.2),
+  1px 30px 30px rgba(16,16,16,0.4);
 }
 
-@keyframes smoke {
+/* @keyframes smoke {
   0% {
     opacity: 0;
     transform: rotateY(90deg);
@@ -151,14 +147,15 @@ h1 {
     transform: rotateY(0deg);
     filter: blur(0);
   }
-}
+} */
 .our-names {
   margin-top: -2rem;
   /* color: black; */
   font-weight: bold;
+  text-shadow: 2px 1px 10px white;
 }
 .glassCard {
-  margin-top:0.6rem;
+  margin-top: -1rem;
   display: flex;
   justify-content: center;
 align-items:center;

@@ -1,5 +1,5 @@
 import React from 'react';
-import profile from '../images/marija.png';
+import profile from '../images/danny.png';
 import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
 
@@ -23,13 +23,14 @@ justify-content: center;
 align-items:center;
 font-size: 0.5rem;
 margin-left: 2rem;
+margin-top: 3rem;
 
 `;
 
 const StyledImg = styled.img`
     width: 200px;
     height: auto;
-     margin-top: -2rem;
+     margin-bottom: 2rem
    /*  border: 2px solid #000;
     border-radius: 50%; */
 `;
@@ -38,13 +39,14 @@ const StyledImg = styled.img`
     line-height: 1.5;
     letter-spacing: 1.5;
     font-family: "Gilroy";
-`; */
+`;  */
 
 const StyledH3 = styled.h3`
     line-heright: 1.5;
     letter-spacing: 1.15;
     font-family: "Gilroy";
     font-size: 20px;
+   text-shadow: 2px 1px 6px white;
 `;
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1]
