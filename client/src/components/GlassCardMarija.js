@@ -23,6 +23,7 @@ justify-content: center;
 align-items:center;
 font-size: 0.5rem;
 margin-left: 2rem;
+margin-top: 3rem;
 
 `;
 
@@ -45,6 +46,7 @@ const StyledH3 = styled.h3`
     letter-spacing: 1.15;
     font-family: "Gilroy";
     font-size: 20px;
+    text-shadow: 2px 1px 6px white;
 `;
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1]
