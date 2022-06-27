@@ -1,9 +1,6 @@
 import mongoose from "mongoose";
 const StudioSchema = new mongoose.Schema({
-   type: {
-       type: String,
-      required: true
-   },
+ 
     city: {
     type: String,
     required: true,
