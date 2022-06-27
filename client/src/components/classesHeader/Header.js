@@ -60,7 +60,7 @@ import {
     };
   
     return (
-      <div className="header">
+      <div style={{backgroundColor: "#485461"}} className="header">
         <div
           className={
             type === "list" ? "headerContainer listMode" : "headerContainer"

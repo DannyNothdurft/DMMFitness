@@ -8,7 +8,7 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{backgroundColor: "#485461", backgroundImage: 'linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%)'}}>
       
       <Header/>
       <div className="homeContainer">
