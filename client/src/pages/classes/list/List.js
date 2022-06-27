@@ -1,6 +1,6 @@
 import "./list.css";
-/* import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header"; */
+import MailList from "../../../components/mailList/MailList.js";
+import Footer from "../../../components/footer/Footer.js"; 
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
@@ -29,17 +29,17 @@ const List = () => {
     <div>
       {/* <Navbar />
       <Header type="list" /> */}
-      <div className="listContainer">
+      <div style={{backgroundColor: "#485461", backgroundImage: 'linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%)'}} className="listContainer">
         <div className="listWrapper">
-          <div className="listSearch">
-            <h1 className="lsTitle">Search</h1>
+          <div style={{backgroundColor: "#485461"}} className="listSearch">
+            <h1 style={{color:'orange', marginTop:'-10px', fontSize:'2rem'}} className="lsTitle">Your Search</h1>
             <div className="lsItem">
-              <label>Destination</label>
+              <label style={{color:'orange', fontSize:'1rem'}}>Studio Location</label>
               <input placeholder={destination} type="text" />
             </div>
             <div className="lsItem">
-              <label>Check-in Date</label>
-              <span onClick={() => setOpenDate(!openDate)}>{`${format(
+              <label style={{color:'orange', fontSize:'1rem'}}>Booked Classes Date</label>
+              <span style={{ borderRadius: '.3rem'}} onClick={() => setOpenDate(!openDate)}>{`${format(
                 dates[0].startDate,
                 "MM/dd/yyyy"
               )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
@@ -51,7 +51,7 @@ const List = () => {
                 />
               )}
             </div>
-            <div className="lsItem">
+         {/*    <div className="lsItem">
               <label>Options</label>
               <div className="lsOptions">
                 <div className="lsOptionItem">
@@ -102,11 +102,11 @@ const List = () => {
                   />
                 </div>
               </div>
-            </div>
+              </div>*/}
   
-            <button onClick={handleClick}>Search</button>
+            <button style={{backgroundColor: 'orange', color: 'black', fontSize:'20px', fontWeight:'bold'}} onClick={handleClick}>Search</button>
           
-          </div>
+              </div> 
           <div className="listResult">
             
           {loading ? (
@@ -124,8 +124,11 @@ const List = () => {
           
           </div>
         </div>
+        <MailList/>
+      <Footer/>
       </div>
-    </div>
+    
+    </div> 
   );
 };
 
