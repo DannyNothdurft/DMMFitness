@@ -1,5 +1,8 @@
 import React, { useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import Footer from '../../../src/components/footer/Footer.js'
+import MailList from '../../../src/components/mailList/MailList.js'
+
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -50,6 +53,8 @@ const MarkersMap = () => {
                 </Marker>
               ))} 
             </MapContainer>
+            <MailList/>
+            <Footer style={{textAlign: 'center'}}/>
           </div>
         </div>
       </div>
