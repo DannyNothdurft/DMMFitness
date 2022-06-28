@@ -21,7 +21,7 @@ export default function About() {
         <span style={{ color: darkMode ? "#c96dfd" : "grey", fontSize:'40px' }}>☽</span>
       </div >
       <div>
-      <h1 style={{ color: darkMode ? "orange" : "#272727" }}> DMM.Fitness </h1>
+      <h1 className='aboutTitle' style={{ color: darkMode ? "orange" : "#272727" }}> DMM.Fitness </h1>
         <Typed className="typ-text"
                 style={{color: darkMode ? "#DCDCDC" : "#2F4F4F"}}
                 strings={["D-Dedicate.", "M-Motivate.", "M-Make Your First Step!."]}
