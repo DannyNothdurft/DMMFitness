@@ -107,7 +107,7 @@ input:checked + .slider:before {
   font-weight: bold;
 } 
 
-h1 {
+.aboutTitle {
   display: flex;
   justify-content: center;
   align-items: center;
