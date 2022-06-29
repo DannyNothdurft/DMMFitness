@@ -159,8 +159,10 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
 align-items:center;
+height:350px;
 }
 .video-card {
 z-index: 1;
-height: 20%
+height: 20%;
+z-index: 1;
 } 

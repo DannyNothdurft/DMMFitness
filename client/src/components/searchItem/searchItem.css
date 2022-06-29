@@ -23,21 +23,14 @@
   
   .siTitle {
     font-size: 20px;
-    color: #0071c2;
+    color: rgb(0, 0, 0);
   }
   
   .siDistance {
     font-size: 12px;
   }
   
-  .siTaxiOp {
-    font-size: 12px;
-    background-color: #008009;
-    color: white;
-    width: max-content;
-    padding: 3px;
-    border-radius: 5px;
-  }
+ 
   
   .siSubtitle{
     font-size: 12px;
@@ -107,3 +100,18 @@
     cursor: pointer;
     border-radius: 5px;
   }
+
+
+
+  @keyframes scroll {
+    from {
+      background-color: black;
+    }
+    to {
+      background-color: white;
+    }
+  }
+  .fpName {
+    animation-name: scroll;
+    animation-duration: infinite;
+ }

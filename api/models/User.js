@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-import Joi from "joi";
-import passwordComplexity from "joi-password-complexity";
+
 const UserSchema = new mongoose.Schema(
   {
     firstName: {

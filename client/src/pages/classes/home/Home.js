@@ -13,9 +13,9 @@ const Home = () => {
       <Header/>
       <div className="homeContainer">
         <Featured/>
-        <h1 className="homeTitle">Choose your workout</h1>
+        <h1 data-aos='fade-left' className="homeTitle">Choose your workout</h1>
         <WorkoutList/>
-        <h1 className="homeTitle">Ratings and Experience</h1>
+        <h1 data-aos='fade-down' className="homeTitle">Ratings and Experience</h1>
         <FeaturedProperties/>
         <MailList/>
         <Footer/>

@@ -5,14 +5,15 @@ const Featured = () => {
   const { data, loading, error } = useFetch(
     "/studios/countByCity?cities=berlin,madrid,london"
   );
- console.log(data);
+  
+
   return (
     <div className="featured">
       {loading ? (
         "Loading please wait"
       ) : (
         <>
-          <div className="featuredItem">
+          <div data-aos='fade-left'className="featuredItem">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRl51H8h70N9eSKBhK-spgOOjcjJ78tbqWG-dNP8MdB8cH0yhvQEMZ9LT69JYFCMD-APg&usqp=CAU"
               alt=""
@@ -24,7 +25,7 @@ const Featured = () => {
             </div>
           </div>
 
-          <div className="featuredItem">
+          <div data-aos='fade-down' className="featuredItem">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAI4A7ZU_o_qzqWf1elf9RtsphpY0UlWu-yQ&usqp=CAU"
               alt=""
@@ -35,7 +36,7 @@ const Featured = () => {
               <h2 style={{marginTop:'10px', color: 'white'}}>{data[1]} studios</h2>
             </div>
           </div>
-          <div className="featuredItem">
+          <div data-aos='fade-right' className="featuredItem">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2IfdwUu3t15C56sZvHYIGOlZYF4PMLBXcbg&usqp=CAU"
               alt=""
