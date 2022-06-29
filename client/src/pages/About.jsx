@@ -4,12 +4,13 @@ import '../styles/About.css'
 import GlassCard from "../components/GlassCard.js"
 import GlassCardMarija from "../components/GlassCardMarija.js"
 import GlassCardDanny from "../components/GlassCardDanny.js"
-
+import Mail from "../components/mailList/MailList"
+import Footer from "../components/footer/Footer"
 export default function About() {
    const [darkMode, setDarkMode] = useState(false);
 
     return (
-        <div style={{height:'100vh'}} className={darkMode ? "dark-mode" : "light-mode"}>
+        <div style={{height:'91.600vh'}} className={darkMode ? "dark-mode" : "light-mode"}>
       <div className="container">
         <span style={{ color: darkMode ? "grey" : "yellow", fontSize:'40px' }}>☀︎</span>
         <div className="switch-checkbox">
@@ -40,8 +41,14 @@ export default function About() {
         <GlassCardDanny className={darkMode ? "dark-mode" : "light-mode"}/>
          <GlassCard/>
           <GlassCardMarija/>
+         
+         
+         
+
           </div>
+      
       </div>
+     
     </div>
     )
 }

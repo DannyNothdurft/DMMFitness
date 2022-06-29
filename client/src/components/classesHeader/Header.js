@@ -8,15 +8,22 @@ import {
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   import "./header.css";
   import { DateRange } from "react-date-range";
-  import { useContext, useState } from "react";
+  import { useContext, useState, useEffect } from "react";
   import "react-date-range/dist/styles.css"; // main css file
   import "react-date-range/dist/theme/default.css"; // theme css file
   import { format } from "date-fns";
   import { useNavigate } from "react-router-dom";
   import { SearchContext } from "../../context/SearchContext";
   import { AuthContext } from "../../context/AuthContext";
-  
+  import Aos from 'aos'
+  import 'aos/dist/aos.css'
   const Header = ({ type }) => {
+
+    useEffect(() =>{
+      Aos.init({duration:2000})
+         },[]);
+         
+
     const [destination, setDestination] = useState("");
     const [openDate, setOpenDate] = useState(false);
     const [dates, setDates] = useState([
@@ -29,8 +36,7 @@ import {
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState({
       adult: 1,
-      children: 0,
-      room: 1,
+    
     });
   
     const navigate = useNavigate();
@@ -49,17 +55,20 @@ import {
     const { dispatch } = useContext(SearchContext);
   
     const handleSearch = () => {
+       
       if(destination.length===0) {
           alert('Please write Fitness LOCATION and DATE')
       }
       else {
         dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+       
         navigate("/studios", { state: { destination, dates, options } });
       }
       
     };
   
     return (
+    
       <div style={{backgroundColor: "#485461"}} className="header">
         <div
           className={
@@ -69,10 +78,10 @@ import {
          
           {type !== "list" && (
             <>
-              <h1 style={{textAlign: "center"}} className="headerTitle">
+              <h1 data-aos="fade-up" style={{textAlign: "center"}} className="headerTitle">
              DON'T WAIT! <br/> Book Your Classes NOW!
               </h1>
-              <p style ={{fontSize:'15px', textAlign:'center'}}className="headerDesc">
+              <p data-aos="fade-right" style ={{fontSize:'15px', textAlign:'center'}} className="headerDesc">
               <span style={{color:'orange',fontSize:'20px'}}>Get rewarded for your effort </span> – unlock instant savings of <span style={{color:'orange',fontSize:'20px'}}>10%</span>  or
                 more with a free<span style={{color:'orange',fontSize:'20px'}}> DMM-FITNESS</span> Account
               </p>
@@ -84,10 +93,10 @@ import {
                     type="text"
                     placeholder="Your Fitness Location"
                     className="headerSearchInput"
-                    onChange={(e) => setDestination(e.target.value)}
+                    onChange={(e) => setDestination(e.target.value.toLowerCase())}
                   />
                 </div>
-                {destination.length===0? "true" :"false"}
+                
                 <div className="headerSearchItem">
                   <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                   <span
