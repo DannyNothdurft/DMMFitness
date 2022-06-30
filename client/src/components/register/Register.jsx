@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import axios from "axios";
 import { useNavigate, Link, Navigate } from 'react-router-dom';
-import '../styles/register.scss';
+import './register.scss';
 
 
 // images
-import Logo from '../images/logo.png';
+import Logo from '../../images/logo.png';
 
 // REACT FONTAWESOME IMPORTS 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

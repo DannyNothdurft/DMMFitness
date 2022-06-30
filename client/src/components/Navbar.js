@@ -3,9 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import logo from "../images/logo.png";
+import Profile from './profile/Profile.js'
 
 //Components
-import Register from './Register'
+import Register from './register/Register'
 // REACT FONTAWESOME IMPORTS 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,7 +25,7 @@ export default function Navbar() {
   }
   const { loading, error, dispatch } = useContext(AuthContext);
   const { user } = useContext(AuthContext);
-   console.log(user)
+  
    const navigate = useNavigate()
    const handleLogout = (e) => {
     e.preventDefault();
@@ -38,17 +39,17 @@ export default function Navbar() {
 
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container d-flex flex-row-reverse">
-
+  
          
-      {user ? (<><div className="signed" style={{color: 'orange',border :' solid orange'}}>Logged as <br/>{' '}{user.firstName}</div> <button onClick={handleLogout}>Log Out</button></>) : ( <button className="logIn" onClick={openRegisterCard} >
+    
+     {user? (<Profile/>):( <button className="logIn" onClick={openRegisterCard} >
           <FontAwesomeIcon icon={faCircleUser} style={{ color: 'white', fontSize: '2rem' }} />
             Sign Up
         </button>)}
-
         {register ? < Register
           register={register}
           setRegister={setRegister}
-        /> : undefined}
+        />:undefined }
           
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <FontAwesomeIcon icon={faBars} style={{ color: "white" }} />
