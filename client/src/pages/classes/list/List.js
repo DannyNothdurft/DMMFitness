@@ -30,7 +30,7 @@ const List = () => {
       {/* <Navbar />
       <Header type="list" /> */}
       <div style={{backgroundColor: "#485461", backgroundImage: 'linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%)'}} className="listContainer">
-        <div className="listWrapper">
+        <div data-aos="fade-up" className="listWrapper">
           <div style={{backgroundColor: "#485461"}} className="listSearch">
             <h1 style={{color:'orange', marginTop:'-10px', fontSize:'2rem'}} className="lsTitle">Your Search</h1>
             <div className="lsItem">
