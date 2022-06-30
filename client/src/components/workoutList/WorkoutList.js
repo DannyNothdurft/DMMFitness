@@ -20,7 +20,7 @@ const WorkoutList = () => {
           {data &&
             images.map((img,i) => (
               <div className="pListItem" key={i}>
-                <img data-aos="zoom-in-right"
+                <img data-aos="slide-down"
                   src={img}
                   alt=""
                   className="pListImg"
