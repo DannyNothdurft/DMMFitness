@@ -8,11 +8,11 @@ import { SearchContext } from "../../context/SearchContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Reserve = ({ setOpen, hotelId }) => {
+const Reserve = ({ setOpen, studioId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
+  const { data, loading, error } = useFetch(`/studios/room/${studioId}`);
   const { dates } = useContext(SearchContext);
-
+ console.log(data)
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -74,9 +74,11 @@ const Reserve = ({ setOpen, hotelId }) => {
           onClick={() => setOpen(false)}
         />
         <span>Select your rooms:</span>
-       {/*  {data.map((item) => (
+        {data.map((item) => (
+          
           <div className="rItem" key={item._id}>
             <div className="rItemInfo">
+            {console.log(item)}
               <div className="rTitle">{item.title}</div>
               <div className="rDesc">{item.desc}</div>
               <div className="rMax">
@@ -98,7 +100,7 @@ const Reserve = ({ setOpen, hotelId }) => {
               ))}
             </div>
           </div>
-        ))} */}
+        ))} 
         <button onClick={handleClick} className="rButton">
           Reserve Now!
         </button>
