@@ -4,8 +4,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 
 
-=======
-import Register from "../../../components/Register"
+
+import Register from "../../../components/register/Register"
 
 import "./login.css";
 
@@ -48,21 +48,21 @@ const Login = () => {
       <div style={{border: "1px solid grey",padding: "60px 90px 300px 90px", boxShadow: "10px 13px 16px grey", borderRadius: "20px"}} className="lContainer">
         <hr/>
         <h1 style={{color:'black',marginBottom:'70px' }}>Login Account</h1>
-        <input style={{backgroundColor:'transparent', border:"1px solid grey", outline: "none", padding: "20px 10px"}}
+        <input style={{backgroundColor:'transparent', outline: "none", padding: "20px 10px"}}
           type="text"
           placeholder="E-mail"
           id="email"
           onChange={handleChange}
           className="lInput"
         />
-        <input style={{backgroundColor:'transparent', border:"1px solid grey", outline: "none", padding: "20px 10px"}}
+        <input style={{backgroundColor:'transparent', outline: "none", padding: "20px 10px"}}
           type="password"
           placeholder="Password"
           id="password"
           onChange={handleChange}
           className="lInput"
         />
-        <button style={{backgroundColor:'orange', color:'black', fontSize:'1.5rem'}} disabled={loading} onClick={handleClick} className="lButton">
+        <button style={{backgroundColor:'orange', color:'black', fontSize:'1.5rem', marginTop:'30px'}} disabled={loading} onClick={handleClick} className="lButton">
           Login
         </button>
         {error && <span>{error.message}</span>}

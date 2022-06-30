@@ -63,6 +63,7 @@
     fill: var(--text-color);
     width: 20px;
     height: 20px;
+    
   }
   
   
@@ -107,6 +108,7 @@
   
   .menu-item .icon-button {
     margin-right: 0.5rem;
+
   }
   
   
@@ -118,22 +120,25 @@
     background-color: #525357;
   }
   
-  .icon-right {
-    margin-left: ;
+  .icon-right>* {
+    margin-left: 50px;
+    height: 2rem;
     
   }
   
   /* CSSTransition classes  */
   .menu-primary-enter {
     position: absolute;
-    transform: translateX(110%);
+   /*  transform: translateX(310%); */
   }
   .menu-primary-enter-active {
-    transform: translateX(0%);
+    transform: translateX(100%);
     transition: all var(--speed) ease;
+    visibility: hidden;
   }
   .menu-primary-exit {
     position: absolute;
+    visibility: hidden;
   }
   .menu-primary-exit-active {
     transform: translateX(110%);
@@ -146,13 +151,14 @@
   }
   .menu-secondary-enter-active {
     transform: translateX(0%);
-    transition: all var(--speed) ease;
+    
   }
   .menu-secondary-exit {
-  
+     visibility: hidden;
+     transition: 0.1ms linear;
   }
   .menu-secondary-exit-active {
-    transform: translateX(110%);
-    transition: all .1ms ease;
+    transform: translateX(0%);
+    transition: 0.1ms;
   }
   

@@ -15,7 +15,18 @@
   .lInput{
     height: 30px;
     padding: 10px;
-  }
+    
+    box-shadow: 
+        inset 0px 11px 8px -10px rgb(109, 105, 105),
+        inset 0px -11px 8px -10px #CCC,
+        inset 10px 21px 8px -10px #CCC,
+        inset 10px -11px 8px -10px #CCC; 
+        border-radius: 10px;
+      }
+      .lInput:focus::placeholder {
+        color: transparent;
+      }
+
   
   .lButton {
     border: none;
