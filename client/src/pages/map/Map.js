@@ -41,7 +41,7 @@ const images = [
      
       <div className="row" style={{backgroundColor: "#485461", backgroundImage: 'linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%)'}}>
         <div className="col text-center">
-          <h2 style={{fontWeight:'bold'}}>Our Locations</h2>
+          <h2  style={{fontWeight:'bold'}}>Our Locations</h2>
           <p style={{color:'red', fontSize:'1.5rem', fontWeight:'bold', textDecoration:'underline'}}>You can find us all over Europe</p>
           <div className="col">
             <MapContainer center={center} zoom={ZOOM_LEVEL} ref={mapRef}>

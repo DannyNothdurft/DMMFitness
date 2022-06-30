@@ -37,7 +37,7 @@ const Studio = () => {
   }
 
   const days = dayDifference(dates[0].endDate, dates[0].startDate);
-
+  
   const handleOpen = (i) => {
     setSlideNumber(i);
     setOpen(true);
@@ -62,6 +62,25 @@ const Studio = () => {
       navigate("/login");
     }
   };
+   
+  
+  const plural = (num, str)=>{
+    if(num===1){
+      return num+" "+ str.split('').splice(0,3).join('')
+    }else {
+      return num+" "+ str
+    }
+  }
+   const capitalize = () => {
+    if(data.city){
+      return data.city.charAt(0).toUpperCase() + data.city.slice(1,data.city.length)
+    }else {
+      return 'no'
+    }
+   }
+ 
+  
+  
   return (
     <div>
   
@@ -96,15 +115,15 @@ const Studio = () => {
               />
             </div>
           )}
-          <div className="hotelWrapper">
-            <h1 className="hotelTitle">Fitness Studio in {data.city}</h1>
+          <div data-aos="zoom-in-left" style={{border: "1px solid black", padding: "100px", marginLeft:'-500px'}} className="hotelWrapper">
+            <h1 className="hotelTitle">Fitness Studio in {capitalize(data.city)}</h1>
             <div className="hotelAddress">
               <FontAwesomeIcon icon={faLocationDot} />
               <span>{data.address}</span>
             </div>
             
             <span className="hotelPriceHighlight">
-              Book a stay over ${data.cheapestPrice} and get a
+              Book a Workout over €{data.cheapestPrice} and get a
               10% discount!!!
             </span>
             <div className="hotelImages">
@@ -124,17 +143,17 @@ const Studio = () => {
                 <h1 className="hotelTitle">{data.title}</h1>
                 <p className="hotelDesc">{data.desc}</p>
               </div>
-              <div className="hotelDetailsPrice">
-                <h1>{days+1}-Days Workout!</h1>
+              <div data-aos="fade-up" style={{color:'white',backgroundColor: "#485461"}} className="hotelDetailsPrice">
+                <h1 style={{color:'white'}}>{plural(days+1,"Days")} Workout!</h1>
                 <span>
-                  Located in the real heart of {data.city}, this property has an
-                  excellent location score of 9.8!
+                  Located in the real heart of {capitalize(data.city)}, this Fitness Studio has an
+                  excellent score of 9.8!
                 </span>
                 <h2>
-                  <b>${days * data.cheapestPrice}</b> ({days+1}{" "}
-                 Days Workout)
+                  <b>€{days * data.cheapestPrice}</b> ({plural(days+1,"Days")}{" "}
+                 Workout)
                 </h2>
-                <button onClick={handleClick}>Book Your Training</button>
+                <button style={{backgroundColor:'rgb(209, 138, 5)',color:'black',fontSize:'1.3rem'}} onClick={handleClick}>Book Your Training</button>
               </div>
             </div>
           </div>
