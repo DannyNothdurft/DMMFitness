@@ -25,7 +25,7 @@ const Featured = () => {
             </div>
           </div>
 
-          <div data-aos='fade-down' className="featuredItem">
+          <div data-aos='zoom-in-up' className="featuredItem">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAI4A7ZU_o_qzqWf1elf9RtsphpY0UlWu-yQ&usqp=CAU"
               alt=""

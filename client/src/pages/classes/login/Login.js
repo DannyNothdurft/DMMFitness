@@ -17,7 +17,7 @@ const Login = () => {
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
-  console.log(credentials)
+  
   const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
@@ -34,6 +34,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="lContainer">
+        <h1 style={{color:'black'}}></h1>
         <input
           type="text"
           placeholder="email"

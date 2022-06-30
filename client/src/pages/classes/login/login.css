@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background:linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
   }
   
   .lContainer {

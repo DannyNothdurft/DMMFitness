@@ -20,12 +20,12 @@ const WorkoutList = () => {
           {data &&
             images.map((img,i) => (
               <div className="pListItem" key={i}>
-                <img
+                <img data-aos="zoom-in-right"
                   src={img}
                   alt=""
                   className="pListImg"
                 />
-                <div className="pListTitles">
+                <div data-aos="zoom-in-left" className="pListTitles">
                    <h1>{data[i]?.type}</h1> 
                   {/* <h2>{data[i]?.count} {data[i]?.type}</h2> */}
                 </div>

@@ -2,7 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: -30px;
+    padding: 50px 50px;
+    background: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
+    position: relative;
+    z-index: 1;
+   
   }
   
   .hotelWrapper {
@@ -12,6 +17,8 @@
     flex-direction: column;
     gap: 10px;
     position: relative;
+    margin-bottom: 100px;
+    box-shadow: 10px 13px 10px grey;
   }
   
   .bookNow {
@@ -29,6 +36,7 @@
   
   .hotelTitle {
     font-size: 24px;
+    color: black;
   }
   
   .hotelAddress {
@@ -49,13 +57,16 @@
   }
   
   .hotelImages {
+  
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+   
   }
   
   .hotelImgWrapper {
     width: 33%;
+    padding: 5px 5px 5px 5px;
   }
   
   .hotelImg {
@@ -84,12 +95,19 @@
     flex: 1;
     background-color: #ebf3ff;
     padding: 20px;
+    width: 40%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+   position: absolute;
+    top: 50px;
+    right: -500px;
+    box-shadow: 12px 18px 12px 0px grey;
+
   }
   
   .hotelDetailsPrice > h1 {
+    
     font-size: 18px;
     color: #555;
   }
