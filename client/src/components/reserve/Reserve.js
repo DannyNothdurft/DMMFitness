@@ -12,7 +12,7 @@ const Reserve = ({ setOpen, studioId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { data, loading, error } = useFetch(`/studios/room/${studioId}`);
   const { dates } = useContext(SearchContext);
- console.log(data)
+
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
     const end = new Date(endDate);

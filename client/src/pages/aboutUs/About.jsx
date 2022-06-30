@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Typed from "react-typed"
-import '../styles/About.css'
-import GlassCard from "../components/GlassCard.js"
-import GlassCardMarija from "../components/GlassCardMarija.js"
-import GlassCardDanny from "../components/GlassCardDanny.js"
-import Mail from "../components/mailList/MailList"
-import Footer from "../components/footer/Footer"
+import './About.css'
+import GlassCard from "../../GlasCards/GlassCard.js"
+import GlassCardMarija from "../../GlasCards/GlassCardMarija.js"
+import GlassCardDanny from "../../GlasCards/GlassCardDanny.js"
+import Mail from "../../components/mailList/MailList"
+import Footer from "../../components/footer/Footer"
 export default function About() {
    const [darkMode, setDarkMode] = useState(false);
 

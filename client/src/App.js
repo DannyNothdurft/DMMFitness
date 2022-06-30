@@ -12,13 +12,13 @@ import Header from './components/Header';
 // Pages
 import Shop from './pages/Shop';
 import MarkersMap from './pages/map/Map';
-import About from './pages/About'
+import About from './pages/aboutUs/About'
 
 import Home from "./pages/classes/home/Home";
 import Hotel from "./pages/classes/hotel/Hotel";
 import List from "./pages/classes/list/List";
 import Login from "./pages/classes/login/Login";
-import Register from './components/Register'
+import Register from './components/register/Register'
 function App() {
  
   return (
