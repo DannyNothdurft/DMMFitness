@@ -3,8 +3,6 @@ import MailList from "../../../components/mailList/MailList.js";
 import Footer from "../../../components/footer/Footer.js"; 
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { format } from "date-fns";
-import { DateRange } from "react-date-range";
 import SearchItem from '../../../components/searchItem/SearchItem'
 import useFetch from "../../../hooks/useFetch";
 
@@ -21,15 +19,13 @@ const List = () => {
     `/studios?city=${destination}&min=${min || 0}&max=${max || 999}`
   );
 
-  const handleClick = () => {
-    reFetch();
-  };
+ 
 
   return (
     <div style={{backgroundColor: "#485461", backgroundImage: 'linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%)'}} className="listContainer">
-     
+       <h2 style={{borderTop:'1px solid black', marginBottom:'30px',fontWeight:'bold'}}>Fitness Studios in <span style={{textTransform: 'capitalize'}}>{destination}</span> </h2>
           <div className="listResult">
-           <h2> </h2>
+           
           {loading ? (
               "loading"
             ) : (
