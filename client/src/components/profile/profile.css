@@ -107,7 +107,7 @@
   }
   
   .menu-item .icon-button {
-    margin-right: 0.5rem;
+    margin-right: 0.5rem; 
 
   }
   
@@ -121,7 +121,8 @@
   }
   
   .icon-right>* {
-    margin-left: 50px;
+    padding-left: 40px;
+    width: 1.5rem;
     height: 2rem;
     
   }

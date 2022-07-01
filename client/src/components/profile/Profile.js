@@ -13,7 +13,7 @@ import { ReactComponent as ChevronIcon } from '../../icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from '../../icons/arrow.svg';
 import { ReactComponent as BoltIcon } from '../../icons/bolt.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faCircleUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCircleUser, faRightFromBracket, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Profile() {
 
@@ -92,8 +92,37 @@ console.log(dropdownRef.current?.firstChild.offsetHeight)
     dispatch({ type: "LOGOUT"});
       navigate("/")
 	}
-
-
+   const bookGroupWorkout = () => {
+    for(let i=0;i<user.booking.length;i++){
+      const result= user.booking[i].filter(classes =>classes==="Group Workout")
+     if(result.length>0)return true;
+    }
+   }
+   const bookPersonal = () => {
+    for(let i=0;i<user.booking.length;i++){
+    const result= user.booking[i].filter(classes =>classes==="Personal Training")
+    if(result.length>0)return true;
+    }
+   }
+   const bookHiit = () => {
+    for(let i=0;i<user.booking.length;i++){
+      const result= user.booking[i].filter(classes =>classes==="HIIT Workout")
+      if(result.length>0)return true;
+    }
+     }
+   const bookSpinning = () => {
+    for(let i=0;i<user.booking.length;i++){
+    const result= user.booking[i].filter(classes =>classes==="Spinning")
+    if(result.length>0)return true;
+    }
+   }
+   const bookYoga = () => {
+    for(let i=0;i<user.booking.length;i++){
+    const result= user.booking[i].filter(classes =>classes==="Yoga")
+    if(result.length>0)return true;
+    }
+   }
+   console.log("user",user)
   return (
     <div className="dropdown" style={{ height: menuHeight+30 }} ref={dropdownRef}>
 
@@ -132,15 +161,16 @@ console.log(dropdownRef.current?.firstChild.offsetHeight)
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
             <h2>My Classes</h2>
-          </DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>Group Workout</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>Personal Training</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>HIIT Workout</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>Spinning</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>Yoga</DropdownItem>
+          </DropdownItem> 
+          
+          {bookGroupWorkout()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Group Workout</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />} >Group Workout</DropdownItem>}
+          {bookPersonal()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Personal Training</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>Personal Training</DropdownItem>}
+         {bookHiit()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>HIIT Workout</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>HIIT Workout</DropdownItem>}
+          {bookSpinning()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Spinning</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>Spinning</DropdownItem>}
+         {bookYoga()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Yoga</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>Yoga</DropdownItem>}
         </div>
       </CSSTransition>
-
+        
       <CSSTransition
         in={activeMenu === 'animals'}
         timeout={500}
