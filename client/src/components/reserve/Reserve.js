@@ -5,14 +5,14 @@ import "./reserve.css";
 import useFetch from "../../hooks/useFetch";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../context/SearchContext";
-import axios from "axios";
+import { AuthContext} from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-const Reserve = ({ setOpen, studioId }) => {
+const Reserve = ({ setOpen, studioId}) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { data, loading, error } = useFetch(`/studios/room/${studioId}`);
   const { dates } = useContext(SearchContext);
-
+ const { user } = useContext(AuthContext)
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -40,8 +40,11 @@ const Reserve = ({ setOpen, studioId }) => {
   };
 
   const handleSelect = (e) => {
+    
+   
     const checked = e.target.checked;
     const value = e.target.value;
+   
     setSelectedRooms(
       checked
         ? [...selectedRooms, value]
@@ -50,17 +53,20 @@ const Reserve = ({ setOpen, studioId }) => {
   };
 
   const navigate = useNavigate();
-
+  
   const handleClick = async () => {
     try {
-      await Promise.all(
+      console.log('selected',selectedRooms.roomNumbers)
+     /*  await Promise.all(
         selectedRooms.map((roomId) => {
+          
           const res = axios.put(`/rooms/availability/${roomId}`, {
             dates: alldates,
           });
           return res.data;
         })
-      );
+      ); */
+      user.booking.push(selectedRooms)
       setOpen(false);
       navigate("/");
     } catch (err) {}
@@ -78,23 +84,22 @@ const Reserve = ({ setOpen, studioId }) => {
           
           <div className="rItem" key={item._id}>
             <div className="rItemInfo">
-            {console.log(item)}
+            {console.log("mamaas",selectedRooms)}
               <div className="rTitle">{item.title}</div>
               <div className="rDesc">{item.desc}</div>
-              <div className="rMax">
-                Max people: <b>{item.maxPeople}</b>
-              </div>
+             
               <div className="rPrice">{item.price}</div>
             </div>
             <div className="rSelectRooms">
+              
               {item.roomNumbers.map((roomNumber) => (
                 <div className="room">
                   <label>{roomNumber.number}</label>
                   <input
                     type="checkbox"
-                    value={roomNumber._id}
+                    value={item.title}
                     onChange={handleSelect}
-                    disabled={!isAvailable(roomNumber)}
+                    /* disabled={!isAvailable(roomNumber)}  */
                   />
                 </div>
               ))}

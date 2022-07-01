@@ -33,6 +33,9 @@ const UserSchema = new mongoose.Schema(
       required: true,
     
     },
+    booking: {
+      type: [String]
+    },
     isAdmin: {
       type: Boolean,
       default: false,
