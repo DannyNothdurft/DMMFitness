@@ -44,50 +44,20 @@
     font-size: 12px;
   }
   
-  .lsItem>input{
-    height: 30px;
-    border: none;
-    padding: 5px;
-   
-  }
-  .lsItem>input::placeholder {
-      text-transform: capitalize;
-  }
-  .lsItem>span{
-    height: 30px;
-    padding: 5px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
+ 
+
   
-  .lsOptions{
-    padding: 10px;
-  }
   
-  .lsOptionItem{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    color: #555;
-    font-size: 12px;
-  }
   
-  .lsOptionInput{
-    width: 50px;
-  }
+
   
-  .listSearch>button{
-    padding: 10px;
-    background-color: #0071c2;
-    color: white;
-    border: none;
-    width: 100%;
-    font-weight: 500;
-    cursor: pointer;
-  }
+
   
   .listResult {
-    flex: 3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
   }
