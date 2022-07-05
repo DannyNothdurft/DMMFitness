@@ -44,7 +44,7 @@ const Login = () => {
 
   return (
     
-    <div style={{height:'92vh'}} className="login">
+    <div style={{height:'91.700vh', overflow: 'hidden'}} className="login">
       <div style={{border: "1px solid grey",padding: "60px 90px 300px 90px", boxShadow: "10px 13px 16px grey", borderRadius: "20px"}} className="lContainer">
         <hr/>
         <h1 style={{color:'black',marginBottom:'70px' }}>Login Account</h1>

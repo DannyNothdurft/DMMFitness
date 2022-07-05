@@ -11,6 +11,8 @@ const WorkoutList = () => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOqqWnP_WhgIacIWTEM3UH7SlJbP3HD_74-A&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK69qz3nZP7GFy41eA8n51Np_guhhMD5_rdA&usqp=CAU",
   ];
+
+  
   return (
     <div className="pList">
       {loading ? (

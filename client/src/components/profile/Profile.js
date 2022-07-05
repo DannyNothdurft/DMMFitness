@@ -16,28 +16,38 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCircleUser, faRightFromBracket, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Profile() {
-
+  const {user } = useContext(AuthContext)
+  const [open, setOpen] = useState(true);
+    useEffect(() => {
+     setOpen(!open);
+    }, [user.booking.length])
   
- 
 
+ 
+  
   return (
     <Navbar >
-      <NavItem icon={<PlusIcon />} />
-      <NavItem icon={<BellIcon />} />
+    <NavItem icon={<PlusIcon />}/>
+     <NavItem icon={<BellIcon />} notification={open? <FontAwesomeIcon style={{color: 'red'}} onClick={()=>setOpen(!open)} icon={faCheckCircle}/> :undefined} ><p style={{position: 'absolute', color:'black', backgroundColor:'white', bottom:'-60px',right: '55px',padding: '10px 10px'}}className="notification">Successfully booked class!</p></NavItem>
+         
       <NavItem icon={<MessengerIcon />} />
 
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
     </Navbar>
+  
   );
 }
 
 function Navbar(props) {
   return (
+    <>
     <nav className="navbarProfile">
       <ul className="navbar-navProfile">{props.children}</ul>
     </nav>
+   
+    </>
   );
 }
 
@@ -48,6 +58,7 @@ function NavItem(props) {
     <li className="nav-itemProfile">
       <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
         {props.icon}
+        {props.notification}
       </a>
 
       {open && props.children}
@@ -62,12 +73,12 @@ function DropdownMenu() {
   const { loading, error, dispatch } = useContext(AuthContext);
  const { user } = useContext(AuthContext);
  const navigate = useNavigate()
-  const {}= useContext(SearchContext)
+ 
   
    useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
   }, [])
-console.log(dropdownRef.current?.firstChild.offsetHeight)
+
   function calcHeight(el) {
     const height = el.offsetHeight;
     console.log(height)
@@ -82,6 +93,7 @@ console.log(dropdownRef.current?.firstChild.offsetHeight)
         
         {props.children}
         <span className="icon-right">{props.rightIcon}</span>
+        <span className="icon-notification">{props.notification}</span>
       </a>
     );
   };
@@ -92,18 +104,18 @@ console.log(dropdownRef.current?.firstChild.offsetHeight)
     dispatch({ type: "LOGOUT"});
       navigate("/")
 	}
-   const bookGroupWorkout = () => {
+    const bookGroupWorkout = () => {
     for(let i=0;i<user.booking.length;i++){
       const result= user.booking[i].filter(classes =>classes==="Group Workout")
      if(result.length>0)return true;
     }
-   }
-   const bookPersonal = () => {
+   } 
+    const bookPersonal = () => {
     for(let i=0;i<user.booking.length;i++){
     const result= user.booking[i].filter(classes =>classes==="Personal Training")
     if(result.length>0)return true;
     }
-   }
+   } 
    const bookHiit = () => {
     for(let i=0;i<user.booking.length;i++){
       const result= user.booking[i].filter(classes =>classes==="HIIT Workout")
@@ -163,8 +175,8 @@ console.log(dropdownRef.current?.firstChild.offsetHeight)
             <h2>My Classes</h2>
           </DropdownItem> 
           
-          {bookGroupWorkout()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Group Workout</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />} >Group Workout</DropdownItem>}
-          {bookPersonal()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Personal Training</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>Personal Training</DropdownItem>}
+           {bookGroupWorkout()? <DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>} >Group Workout</DropdownItem> :<DropdownItem leftIcon={<BoltIcon />} >Group Workout</DropdownItem>} 
+          {bookPersonal()? <DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Personal Training</DropdownItem> :<DropdownItem leftIcon={<BoltIcon />}>Personal Training</DropdownItem>} 
          {bookHiit()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>HIIT Workout</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>HIIT Workout</DropdownItem>}
           {bookSpinning()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Spinning</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>Spinning</DropdownItem>}
          {bookYoga()?<DropdownItem leftIcon={<BoltIcon />} rightIcon={<FontAwesomeIcon icon={faCheckCircle}/>}>Yoga</DropdownItem>:<DropdownItem leftIcon={<BoltIcon />}>Yoga</DropdownItem>}
