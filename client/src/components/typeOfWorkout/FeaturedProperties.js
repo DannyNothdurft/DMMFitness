@@ -24,6 +24,17 @@ const FeaturedProperties = () => {
             comment:"\"This is by far my favorite gym I've been to. Gyms are always a bit intimidating, to me at least, but from the moment you walk through the door they are welcoming and willing to explain how everything works. The instructors are super friendly and are able to modify anything you might have difficulty with or are unable to do for other reasons. Will recommend to anyone.\"",
            }
    ]
+   const capitalize = (str) => {
+ 
+     return str.charAt(0).toUpperCase() + str.slice(1,str.length) 
+    
+   
+  }
+
+    
+   
+
+  
   
   return (
     <div className="fp">
@@ -34,11 +45,15 @@ const FeaturedProperties = () => {
         <>
             
           {data.map((item, idx) => (
+            
+          
+             
+             
             <div className="fpItem" key={item._id}>
            
              <hr/>
               <span data-aos='fade-up' style={{fontStyle: "italic",fontSize: "1.1rem"}}className="fpName">{comments[idx].name}</span>
-              <span data-aos='fade-right' style={{textDecoration:'underline', fontSize:'1.3rem'}} className="fpCity">{item.city}</span>
+              <span data-aos='fade-right' style={{textDecoration:'underline', fontSize:'1.3rem'}} className="fpCity">{capitalize(item.city)}</span>
               <span data-aos='fade-left' style={{fontStyle:'italic',fontSize:'1.1rem'}} className="fpPrice">{comments[idx].comment}</span>
              
               {item.rating && <div className="fpRating">
