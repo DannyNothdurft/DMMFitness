@@ -79,7 +79,7 @@ const Reserve = ({ setOpen, studioId}) => {
           className="rClose"
           onClick={() => setOpen(false)}
         />
-        <span>Select your rooms:</span>
+        <span style={{fontWeight:'bold',fontSize:'1.2rem'}}>Select your Workout:</span>
         {data.map((item) => (
           
           <div className="rItem" key={item._id}>

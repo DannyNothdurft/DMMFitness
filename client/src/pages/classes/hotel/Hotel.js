@@ -79,7 +79,14 @@ const Studio = () => {
     }
    }
  
-  
+  const price = () => {
+    if(days===0){
+      return days+data.cheapestPrice
+    }
+      else{
+       return  days * data.cheapestPrice
+      }
+  }
   
   return (
     <div>
@@ -147,10 +154,10 @@ const Studio = () => {
                 <h1 style={{color:'white'}}>{plural(days+1,"Days")} Workout!</h1>
                 <span>
                   Located in the real heart of {capitalize(data.city)}, this Fitness Studio has an
-                  excellent score of 9.8!
+                  excellent score of {data.rating} ! 
                 </span>
                 <h2>
-                  <b>€{days * data.cheapestPrice}</b> ({plural(days+1,"Days")}{" "}
+                  <b>€{price()}</b> ({plural(days+1,"Days")}{" "}
                  Workout)
                 </h2>
                 <button style={{backgroundColor:'rgb(209, 138, 5)',color:'black',fontSize:'1.3rem'}} onClick={handleClick}>Book Your Training</button>

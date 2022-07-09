@@ -49,7 +49,7 @@ export const updateRoomAvailability = async (req, res, next) => {
   }
 };
 export const deleteRoom = async (req, res, next) => {
-  const hotelId = req.params.studioid;
+  const studioId = req.params.studioid;
   try {
     await Room.findByIdAndDelete(req.params.id);
     try {

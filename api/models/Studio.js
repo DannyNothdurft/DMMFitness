@@ -21,9 +21,7 @@ const StudioSchema = new mongoose.Schema({
     required: true,
   },
   rating: {
-    type: Number,
-    min: 0,
-    max: 5,
+    type: Number
   },
   rooms: {
     type: [String],
