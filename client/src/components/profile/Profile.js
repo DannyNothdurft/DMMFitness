@@ -19,6 +19,7 @@ function Profile() {
   const {user } = useContext(AuthContext)
   const [open, setOpen] = useState(true);
     useEffect(() => {
+     
      setOpen(!open);
     }, [user.booking.length])
   
@@ -28,7 +29,7 @@ function Profile() {
   return (
     <Navbar >
     <NavItem icon={<PlusIcon />}/>
-     <NavItem icon={<BellIcon />} notification={open? <FontAwesomeIcon style={{color: 'red'}} onClick={()=>setOpen(!open)} icon={faCheckCircle}/> :undefined} ><p style={{position: 'absolute', color:'black', backgroundColor:'white', bottom:'-60px',right: '55px',padding: '10px 10px'}}className="notification">Successfully booked class!</p></NavItem>
+    {user.booking.length>0? <NavItem icon={<BellIcon />} notification={open? <FontAwesomeIcon className='notify' style={{color: 'red'}} onClick={()=>setOpen(!open)} icon={faCheckCircle}/> :undefined} ><p style={{position: 'absolute', color:'black', backgroundColor:'white', bottom:'-60px',right: '55px',padding: '10px 10px'}}className="notification">Successfully booked class!</p></NavItem>:<NavItem icon={<BellIcon />}><p style={{position: 'absolute', color:'black', backgroundColor:'white', bottom:'-60px',right: '55px',padding: '10px 10px'}}>No classes booked</p></NavItem>}
          
       <NavItem icon={<MessengerIcon />} />
 
@@ -53,10 +54,13 @@ function Navbar(props) {
 
 function NavItem(props) {
   const [open, setOpen] = useState(false);
-
+ const handleClick = (e) => {
+  e.preventDefault();
+  setOpen(!open)
+ }
   return (
     <li className="nav-itemProfile">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+      <a href="#" className="icon-button" onClick={handleClick}>
         {props.icon}
         {props.notification}
       </a>
